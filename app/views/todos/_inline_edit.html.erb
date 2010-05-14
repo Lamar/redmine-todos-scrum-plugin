@@ -9,7 +9,7 @@
       <%= calendar_for :todo_due %>
       <% if todo.todoable.is_a? Project %>
         <%= f.select :assigned_to_id, todo.todoable.users.collect{|m| [m.name,m.id]},
-             {:prompt=> l(:todo_new_assign_to_tooltip) },  
+             {:prompt=> l(:todo_new_assign_to_tooltip), :include_blank => true },
              {:title => l(:todo_new_assign_to_tooltip) }
          %>
          <%= f.select :issue_id,           todo.possible_issues.collect{ |i| 

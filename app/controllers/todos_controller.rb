@@ -28,7 +28,7 @@ class TodosController < ApplicationController
 
     @allowed_to_edit = User.current.allowed_to?(:edit_todos, @project)
     
-    @new_todo = parent_object.todos.new(:assigned_to => User.current) #Todo.new
+    @new_todo = parent_object.todos.new
    
   end
   #alias_method :index, :project_index

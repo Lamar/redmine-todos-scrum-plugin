@@ -79,6 +79,9 @@
 		 :skip_relative_url_root => true %>
       </span>
     <% end %>
+    <% unless todo.comments.blank? %>
+      <span class="comments"><%= truncate(todo.comments) %></span>
+    <% end %>
   </span>
 </span>
 <div id='todo<%= todo.id %>-new-box'></div>

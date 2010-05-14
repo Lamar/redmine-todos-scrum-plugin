@@ -20,9 +20,11 @@
         %>
       <% end %>
       <br />
-      <%= f.submit %>
-      <%= link_to_remote("cancel", :url => polymorphic_path([todo.todoable,todo]), :method => :get) %>
-      
+      <%= f.text_area :comments, :cols => 90, :rows => 3  %>
+      <div style="float:right;">
+        <%= f.submit %>
+        <%= link_to_remote("cancel", :url => polymorphic_path([todo.todoable,todo]), :method => :get) %>
+      </div>
     
     <% end %>
 

@@ -3,7 +3,7 @@
 <% raise unless parent_object %>
 
     <ul class="todos root" id="<%= TodosController::UL_ID + 'root' %><%='not-editable' unless editable %>">
-      <% for todo in todos.select{|td| !td.done}.sort{|a,b| a.position <=> b.position} %>
+      <% for todo in todos.select{|td| !td.done}.sort{|a,b| a.position <=> b.position}.reverse %>
           <%= render :partial => 'todos/todo_li', :locals => { :todo => todo, :editable => editable }%>
       <% end %>
     </ul>

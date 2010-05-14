@@ -55,7 +55,9 @@ module TodoIssuesControllerPatch
     base.class_eval do
       unloadable # Send unloadable so it will not be unloaded in development
       helper :todos
-      alias_method_chain(:show, :todo) unless method_defined?(:show_without_todo)
+      #
+      #alias_method_chain(:show, :todo) unless method_defined?(:show_without_todo)
+      #
     end
   end
 end
